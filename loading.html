@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Sm@rtz Group</title>
+    <link rel="stylesheet" href="loading.css"> <!-- Link to the CSS file -->
+    
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loading-text">
+            Loading Sm@rtz Group<span class="dot-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </span>
+        </div>
+        <!-- Container for falling books -->
+        <div class="falling-books-container"></div>
+    </div>
+    <script>
+        // Redirect to the main page after 5 seconds
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 5000);
+
+        // Dot Animation
+        let dotIndex = 0;
+        const dots = document.querySelectorAll('.dot');
+        setInterval(() => {
+            dots.forEach(dot => dot.style.opacity = 0.3);
+            dots[dotIndex].style.opacity = 1;
+            dotIndex = (dotIndex + 1) % dots.length;
+        }, 500);
+
+        // Falling Books Animation
+        function createFallingBook() {
+            const book = document.createElement('div');
+            book.classList.add('falling-book');
+            book.style.left = Math.random() * 100 + 'vw';
+            book.style.animationDuration = Math.random() * 2 + 3 + 's';
+            book.textContent = '📚';
+            document.querySelector('.falling-books-container').appendChild(book);
+
+            setTimeout(() => {
+                book.remove();
+            }, 10000);
+        }
+
+        setInterval(createFallingBook, 300);
+    </script>
+</body>
+</html>

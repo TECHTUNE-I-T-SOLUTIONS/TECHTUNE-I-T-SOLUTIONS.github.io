@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Sm@rtz Group</title>
+    <link rel="stylesheet" href="skeleton.css">
+</head>
+<body>
+    <div class="skeleton-wrapper">
+        <div class="skeleton-header">
+            <div class="skeleton-logo"></div>
+            <div class="skeleton-nav"></div>
+        </div>
+
+        <div class="skeleton-content">
+            <div class="skeleton-title"></div>
+            <div class="skeleton-paragraph"></div>
+            <div class="skeleton-paragraph"></div>
+            <div class="skeleton-paragraph"></div>
+        </div>
+
+        <div class="skeleton-gallery">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-image"></div>
+            <div class="skeleton-image"></div>
+        </div>
+
+        <div class="skeleton-footer"></div>
+    </div>
+
+    <div id="falling-books"></div>
+
+    <div class="loading-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <div id="animated-computers"></div>
+
+    <script>
+        // Redirect to index.html after 5 seconds
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 5000);
+
+        // Falling Books Animation
+        function createFallingBook() {
+            const book = document.createElement('div');
+            book.classList.add('falling-book');
+            book.style.left = Math.random() * 100 + 'vw';
+            book.style.animationDuration = Math.random() * 2 + 3 + 's';
+            book.textContent = '📚';
+            document.getElementById('falling-books').appendChild(book);
+
+            setTimeout(() => {
+                book.remove();
+            }, 5000);
+        }
+
+        setInterval(createFallingBook, 300);
+
+        // Loading Dots Animation
+        const dots = document.querySelectorAll('.dot');
+        let dotIndex = 0;
+
+        setInterval(() => {
+            dots.forEach(dot => dot.style.opacity = 0.3);
+            dots[dotIndex].style.opacity = 1;
+            dotIndex = (dotIndex + 1) % dots.length;
+        }, 500);
+
+        // Animated Computers
+        function createAnimatedComputer() {
+            const computer = document.createElement('div');
+            computer.classList.add('animated-computer');
+            computer.style.left = Math.random() * 100 + 'vw';
+            computer.style.animationDuration = Math.random() * 2 + 4 + 's';
+            computer.textContent = '💻';
+            document.getElementById('animated-computers').appendChild(computer);
+
+            setTimeout(() => {
+                computer.remove();
+            }, 5000);
+        }
+
+        setInterval(createAnimatedComputer, 1000);
+    </script>
+</body>
+</html>

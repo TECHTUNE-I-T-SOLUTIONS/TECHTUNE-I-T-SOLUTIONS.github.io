@@ -1,0 +1,93 @@
+<!-- Splash Screen Container -->
+<div id="splash-screen" class="splash-screen hidden">
+    <div class="splash-content">
+        <h1 id="splash-title">SIGN UP TO HAVE EXCLUSIVE ACCESS</h1>
+        <form id="splash-form">
+            <!-- Sign Up Fields -->
+            <div id="sign-up-fields">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="occupation">Occupation:</label>
+                <select id="occupation" name="occupation" required>
+                    <option value="student">Student</option>
+                    <option value="worker">Worker</option>
+                </select>
+
+                <label for="school">School (if student):</label>
+                <input type="text" id="school" name="school">
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="motive">Motive for Signing Up:</label>
+                <select id="motive" name="motive" required>
+                    <option value="computer">Computer Enquiries</option>
+                    <option value="bookshopping">Bookshopping</option>
+                </select>
+
+                <label for="whatsapp">WhatsApp Number:</label>
+                <div class="whatsapp-container">
+                    <select id="country-code" name="country-code">
+                        <option value="+234">+234 (Nigeria)</option>
+                        <option value="+234">+234 (Nigeria)</option>
+                        <option value="+1">+1 (United States)</option>
+                        <option value="+44">+44 (United Kingdom)</option>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+61">+61 (Australia)</option>
+                        <option value="+81">+81 (Japan)</option>
+                        <option value="+49">+49 (Germany)</option>
+                        <option value="+33">+33 (France)</option>
+                        <option value="+55">+55 (Brazil)</option>
+                        <option value="+27">+27 (South Africa)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+7">+7 (Russia)</option>
+                        <option value="+39">+39 (Italy)</option>
+                        <option value="+34">+34 (Spain)</option>
+                        <option value="+52">+52 (Mexico)</option>
+                        <option value="+63">+63 (Philippines)</option>
+                        <option value="+82">+82 (South Korea)</option>
+                        <option value="+90">+90 (Turkey)</option>
+                        <option value="+31">+31 (Netherlands)</option>
+                        <option value="+64">+64 (New Zealand)</option>
+                        <option value="+41">+41 (Switzerland)</option>
+                        <option value="+46">+46 (Sweden)</option>
+                        <option value="+47">+47 (Norway)</option>
+                        <option value="+48">+48 (Poland)</option>
+                        <option value="+351">+351 (Portugal)</option>
+                        <option value="+358">+358 (Finland)</option>
+                        <option value="+32">+32 (Belgium)</option>
+                        <option value="+43">+43 (Austria)</option>
+                        <option value="+420">+420 (Czech Republic)</option>
+                        <option value="+45">+45 (Denmark)</option>
+                        <option value="+30">+30 (Greece)</option>
+                        <option value="+47">+47 (Norway)</option>
+                        <option value="+353">+353 (Ireland)</option>
+                        <option value="+56">+56 (Chile)</option>
+                        <option value="+54">+54 (Argentina)</option>
+                        <option value="+374">+374 (Armenia)</option>
+                        <option value="+961">+961 (Lebanon)</option>
+                        <option value="+92">+92 (Pakistan)</option>
+                    </select>
+                    <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{10}" placeholder="XXXXXXXXXX" required>
+                </div>
+            </div>
+ <!-- Login Fields -->
+ <div id="login-fields" class="hidden">
+    <label for="login-email">Email:</label>
+    <input type="email" id="login-email" name="login-email" required>
+
+    <label for="login-password">Password:</label>
+    <input type="password" id="login-password" name="login-password" required>
+</div>
+
+<button type="submit" class="signup-button">Submit</button>
+</form>
+</div>
+</div>            

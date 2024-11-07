@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sm@rtz Bookshop</title>
+    <link rel="icon" href="Images/smartzzz.png" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <div class="top-left">
+                <img src="Images/Navigation Icon.png" alt="Navigation Icon" class="nav-icon" onclick="toggleSidebar()">
+            </div>
+            <div class="top-right">
+                <!-- Search Section -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-btn">Search</button>
+                </div>
+    
+                <!-- Auth Section -->
+                <div class="auth-section">
+                    <button class="register-btn" onclick="openSignUpSplash()">Sign Up</button>
+                    <button class="signin-btn" onclick="openLoginSplash()">Login</button>
+                </div>
+
+                <!-- Cart Section -->
+                <div class="cart-section">
+                    <img src="Images/Empty-Cart.png" alt="Cart Icon" class="cart-image">
+                    <button class="cart-btn" onclick="location.href='orders.html'">Cart</button>
+                </div>
+    
+                <!-- Profile Icon -->
+                <img src="Images/User-Profile.png" alt="User Profile" class="user-icon" onclick="location.href='profile.html'">
+            </div>
+        </div>
+    
+        <!-- Center Top Section -->
+        <div class="center-top">
+            <img src="Images/Sm@rtzGroupLogo.png" alt="Sm@rtz Group Logo" class="center-logo">
+            <h1 class="animated-heading bounce"><a href="index.html">SM@RTZ GROUP</a></h1>
+        </div>
+    
+    </header>
+    
+<!-- Sign-Up Splash Screen -->
+<div id="signup-splash" class="splash-screen">
+    <div class="splash-content">
+        <span class="close-btn" onclick="closeSplash('signup-splash')">&times;</span>
+        <h1 style="text-align: center;">SIGN UP TO HAVE EXCLUSIVE ACCESS</h1>
+        <form class="signup-form" style="text-align: center;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="occupation">Occupation:</label>
+            <select id="occupation" name="occupation" required>
+                <option value="student">Student</option>
+                <option value="worker">Worker</option>
+            </select>
+
+            <label for="school">School (if student):</label>
+            <input type="text" id="school" name="school">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="motive">Motive for Signing Up:</label>
+            <select id="motive" name="motive" required>
+                <option value="computer">Computer Enquiries</option>
+                <option value="bookshopping">Bookshopping</option>
+            </select>
+
+            <label for="whatsapp">WhatsApp Number:</label>
+            <div class="whatsapp-container">
+                <select id="country-code" name="country-code">
+                    <option value="+234">+234 (Nigeria)</option>
+                    <option value="+1">+1 (United States)</option>
+                    <option value="+44">+44 (United Kingdom)</option>
+                    <option value="+91">+91 (India)</option>
+                    <option value="+61">+61 (Australia)</option>
+                    <option value="+81">+81 (Japan)</option>
+                    <option value="+49">+49 (Germany)</option>
+                    <option value="+33">+33 (France)</option>
+                    <option value="+55">+55 (Brazil)</option>
+                    <option value="+27">+27 (South Africa)</option>
+                    <option value="+86">+86 (China)</option>
+                    <option value="+7">+7 (Russia)</option>
+                    <option value="+39">+39 (Italy)</option>
+                    <option value="+34">+34 (Spain)</option>
+                    <option value="+52">+52 (Mexico)</option>
+                    <option value="+63">+63 (Philippines)</option>
+                    <option value="+82">+82 (South Korea)</option>
+                    <option value="+90">+90 (Turkey)</option>
+                    <option value="+31">+31 (Netherlands)</option>
+                    <option value="+64">+64 (New Zealand)</option>
+                    <option value="+41">+41 (Switzerland)</option>
+                    <option value="+46">+46 (Sweden)</option>
+                    <option value="+47">+47 (Norway)</option>
+                    <option value="+48">+48 (Poland)</option>
+                    <option value="+351">+351 (Portugal)</option>
+                    <option value="+358">+358 (Finland)</option>
+                    <option value="+32">+32 (Belgium)</option>
+                    <option value="+43">+43 (Austria)</option>
+                    <option value="+420">+420 (Czech Republic)</option>
+                    <option value="+45">+45 (Denmark)</option>
+                    <option value="+30">+30 (Greece)</option>
+                    <option value="+47">+47 (Norway)</option>
+                    <option value="+353">+353 (Ireland)</option>
+                    <option value="+56">+56 (Chile)</option>
+                    <option value="+54">+54 (Argentina)</option>
+                    <option value="+374">+374 (Armenia)</option>
+                    <option value="+961">+961 (Lebanon)</option>
+                    <option value="+92">+92 (Pakistan)</option>
+            </select>
+                <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{10}" placeholder="XXXXXXXXXX" required>
+            </div>
+
+            <button type="submit" class="signup-button">Sign Up</button>
+            <p style="text-align: center;">Already have an account? <a href="#" onclick="openLoginSplash()">Login here</a></p>
+
+        </form>
+
+        <!-- Google and Facebook Login Buttons -->
+        <div style="text-align: center; margin-top: 10px;">
+            <button id="google-login" class="login-button">
+                <img src="images/google.png" alt="Google Icon" class="icon">Login with Google
+            </button>
+                <button id="facebook-login" class="login-button" style="background-color: #3b5998;">
+                    <img src="images/facebook.png" alt="Facebook Icon" class="icon">Login with Facebook
+                </button>
+        </div>
+    </div>
+</div>
+
+<!-- Login Splash Screen -->
+<div id="login-splash" class="splash-screen">
+    <div class="splash-content">
+        <span class="close-btn" onclick="closeSplash('login-splash')">&times;</span>
+        <h1 class="welcome-message" style="text-align: center;">LOGIN TO YOUR ACCOUNT</h1>
+        <p style="text-align: center;">Your one-stop shop for all your computing and book needs.</p>
+        
+        <form class="login-form" style="text-align: center;" onsubmit="handleLogin(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="login-button">Login</button>
+        </form>
+
+        <p style="text-align: center;">Don't have an account? <a href="#" onclick="closeSplash('login-splash')openSignUpSplash()">Sign up here</a></p>
+        <p style="text-align: center;"><a href="#" onclick="openRecoverySplash()">Forgot your Password?</a></p>
+        
+        <!-- Google and Facebook Login Buttons -->
+        <div style="text-align: center; margin-top: 10px;">
+            <button id="google-login" class="login-button">
+                <img src="images/google.png" alt="Google Icon" class="icon">Login with Google
+            </button>
+            <button id="facebook-login" class="login-button" style="background-color: #3b5998;">
+                <img src="images/facebook.png" alt="Facebook Icon" class="icon">Login with Facebook
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Password Recovery Splash Screen -->
+<div id="recovery-splash" class="splash-screen">
+    <div class="splash-content">
+        <span class="close-btn" onclick="closeSplash('recovery-splash')">&times;</span>
+        <h1 style="text-align: center;">Password Recovery</h1>
+        <form class="recovery-form" style="text-align: center;">
+            <label for="recovery-email">Enter your email:</label>
+            <input type="email" id="recovery-email" name="recovery-email" required>
+
+            <button type="submit" class="recovery-button">Send Recovery Link</button>
+        </form>
+    </div>
+</div>
+
+<nav class="bottom-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="computers.html">Sm@rtz Computers</a></li>
+            <li><a href="bookshop.html">Sm@rtz Bookshop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="orders.html">My Orders</a></li>
+            <li class="more-option" onmouseover="showMoreDropdown()" onclick="toggleMoreDropdown()">
+                <a href="#">More</a>
+                <div id="moreDropdown" class="dropdown-content">
+                    <a href="document-creation.html">Create a Document</a>
+                    <a href="document-editing.html">Edit a Document</a>
+                    <a href="document-printing.html">Print a Document</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="computers.html">Sm@rtz Computers</a>
+        <a href="bookshop.html">Sm@rtz Bookshop</a>
+        <a href="orders.html">My Orders</a>
+        <a href="about.html">About Us</a>
+    </div>
+    <main>
+        <h1 class="welcome-message">Welcome to Sm@rtz Bookshop</h1>
+        <p><b>Your one-stop shop for all your book needs.</b></p>
+    
+            <div class="count-container">
+                <h2>More than <span id="dynamic-number-books" class="dynamic-number">5000</span> books available</h2>
+            </div>
+        
+        <div class="book-gallery">
+            <div class="book">
+                <img src="Images/Book (1).png" alt="Book 1" class="circle-img">
+                <p><b>Deliver What You Promise</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (2).png" alt="Book 2" class="circle-img">
+                <p><b>The Bezos Blueprint</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (3).png" alt="Book 3" class="circle-img">
+                <p><b>Think Faster, Talk Smarter</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (4).png" alt="Book 4" class="circle-img">
+                <p><b>Die Empty</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (5).png" alt="Book 5" class="circle-img">
+                <p><b>The School of Life</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (6).png" alt="Book 6" class="circle-img">
+                <p><b>Built to Sell</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (7).png" alt="Book 7" class="circle-img">
+                <p><b>High Road Leadership</b></p>
+            </div>
+        </div>
+    
+        <section>
+            <h2>Our Collection</h2>
+            <p><b>At Sm@rtz Bookshop, we offer a diverse collection of books for all age groups and interests. Whether you are looking for educational materials, novels, or reference books, we have it all.</b></p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Location: Shop 4, 5, and 6, at the back of the Faculty of CIS, University of Ilorin, Nigeria.</p>
+            <p>Phone Number: +2348156645378</p>
+            <p><a href="https://wa.me/2348156645378" class="whatsapp-link"><img src="Images/whatsapp-logo.png" alt="WhatsApp Logo" class="whatsapp-logo"></a></p>
+            <p>Developed By: <a href="https://techtuneitsolutions.com">TechTune I. T. Solutions</a></p>
+            <div class="search-newsletter">
+                <div class="search-box">
+                    <input type="search" placeholder="Search...">
+                    <button>Search</button>
+                </div>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Sign up for our newsletter">
+                    <button href="signup.html">Subscribe</button>
+                </div>
+            </div>
+            <p>&copy; 2024 Sm@rtz Group. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Customer Service Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <img src="Images/CustomerService.gif" alt="Customer Service" class="chatbot-icon" onclick="toggleChatWindow()">
+        <span class="tooltiptext"><b>Customer Service</b></span>    
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Customer Service</span>
+                <button class="close-chat" onclick="toggleChatWindow()">&times;</button>
+            </div>
+            <div class="chat-body">
+                <!-- Chat content goes here -->
+                <p>Welcome to Sm@rtz Group Customer Service! How can we assist you today?</p>
+                <!-- Add chat functionality here -->
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message..." class="chat-input">
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

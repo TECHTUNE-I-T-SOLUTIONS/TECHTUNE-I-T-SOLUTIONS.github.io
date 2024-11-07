@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Printing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <div class="top-left">
+                <img src="Images/Navigation Icon.png" alt="Navigation Icon" class="nav-icon" onclick="toggleSidebar()">
+            </div>
+            <div class="top-right">
+                <!-- Search Section -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-btn">Search</button>
+                </div>
+    
+                <!-- Auth Section -->
+                <div class="auth-section">
+                    <button class="register-btn" onclick="location.href='signup.html'">Sign Up</button>
+                    <button class="signin-btn" onclick="location.href='login.html'">Login</button>
+                </div>
+    
+                <!-- Cart Section -->
+                <div class="cart-section">
+                    <img src="Images/Empty-Cart.png" alt="Cart Icon" class="cart-image">
+                    <button class="cart-btn" onclick="location.href='orders.html'">Cart</button>
+                </div>
+    
+                <!-- Profile Icon -->
+                <img src="Images/User-Profile.png" alt="User Profile" class="user-icon" onclick="location.href='profile.html'">
+            </div>
+        </div>
+    
+        <!-- Center Top Section -->
+        <div class="center-top">
+            <img src="Images/Sm@rtzGroupLogo.png" alt="Sm@rtz Group Logo" class="center-logo">
+            <h1 class="animated-heading bounce"><a href="index.html">SM@RTZ GROUP</a></h1>
+        </div>
+    
+    </header>
+    <main>
+    <div class="Document-Creation">
+        <h1>Document Printing</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="upload">
+                <label for="upload-document"><b>Upload Document:</b></label>
+                <input type="file" id="upload-document" name="upload-document" required>
+
+                <div class="Description">
+                    <label for="document-description"><b></b>Describe the document:</label>
+                    <textarea placeholder="Describe the document you wanna print." id="document-description" name="document-description" rows="4" required></textarea>
+                    
+                    <div class="Document-Type">
+                        <label for="document-type"> <b>Document Type:</b></label>
+                        <select id="document-type" name="document-type" required>
+                            <option value="confidential">Confidential</option>
+                            <option value="normal">Normal</option>
+                            <option value="pdf">PDF</option>
+                            <option value="docx">DOCX</option>
+                            <option value="webpage">Webpage</option>
+                        </select>
+                    </div>
+
+                    <div class="Phone">
+                        <label for="contact-phone"><b>Phone Number:</b></label>
+                        <input placeholder="e.g. +234012345678" type="tel" id="contact-phone" name="contact-phone" required>
+                    </div>
+
+                    <div class="E-mail">
+                        <label for="contact-email"><b>Email Address:</b></label>
+                        <input placeholder="e.g. example@gmail.com" type="email" id="contact-email" name="contact-email" required>
+                    </div>
+
+                    <div class="Submit">
+                        <p><b>Note: You will be contacted by a Business Representative within minutes.</b></p>
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>    
+        </form>
+    </div>
+    <a href="javascript:history.back()" class="back-button">Go Back</a>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Location: Shop 4, 5, and 6, at the back of the Faculty of CIS, University of Ilorin, Nigeria.</p>
+            <p>Phone Number: +2348156645378</p>
+            <p><a href="https://wa.me/2348156645378" class="whatsapp-link"><img src="Images/whatsapp-logo.png" alt="WhatsApp Logo" class="whatsapp-logo"></a></p>
+            <p>Developed By: <a href="https://techtuneitsolutions.com">TechTune I. T. Solutions</a></p>
+            <div class="search-newsletter">
+                <div class="search-box">
+                    <input type="search" placeholder="Search...">
+                    <button>Search</button>
+                </div>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Sign up for our newsletter">
+                    <button href="signup.html">Subscribe</button>
+                </div>
+            </div>
+            <p>&copy; 2024 Sm@rtz Group. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Customer Service Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <img src="Images/CustomerService.gif" alt="Customer Service" class="chatbot-icon" onclick="toggleChatWindow()">
+        <span class="tooltiptext"><b>Customer Service</b></span>    
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Customer Service</span>
+                <button class="close-chat" onclick="toggleChatWindow()">&times;</button>
+            </div>
+            <div class="chat-body">
+                <!-- Chat content goes here -->
+                <p>Welcome to Sm@rtz Group Customer Service! How can we assist you today?</p>
+                <!-- Add chat functionality here -->
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message..." class="chat-input">
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

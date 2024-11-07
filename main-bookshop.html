@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sm@rtz Bookshop</title>
+    <link rel="icon" href="Images/smartzzz.png" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <div class="top-left">
+                <img src="Images/Navigation Icon.png" alt="Navigation Icon" class="nav-icon" onclick="toggleSidebar()">
+            </div>
+            <div class="top-right">
+                <!-- Search Section -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-btn">Search</button>
+                </div>
+    
+                <!-- Cart Section -->
+                <div class="cart-section">
+                    <img src="Images/Empty-Cart.png" alt="Cart Icon" class="cart-image">
+                    <button class="cart-btn" onclick="location.href='main-orders.html'">Cart</button>
+                </div>
+    
+                <!-- Profile Icon -->
+                <img src="Images/User-Profile.png" alt="User Profile" class="user-icon" onclick="location.href='main-profile.html'">
+    
+                <!-- Logout Button -->
+                <button class="logout-btn" onclick="confirmLogout()">Logout</button>
+            </div>
+        </div>
+    
+        <!-- Center Top Section -->
+        <div class="center-top">
+            <img src="Images/Sm@rtzGroupLogo.png" alt="Sm@rtz Group Logo" class="center-logo">
+            <h1 class="animated-heading bounce"><a href="main-index.html">SM@RTZ GROUP</a></h1>
+        </div>
+    </header>
+    <nav class="bottom-nav">
+        <ul>
+            <li><a href="main-index.html">Home</a></li>
+            <li><a href="main-computers.html">Sm@rtz Computers</a></li>
+            <li><a href="main-bookshop.html">Sm@rtz Bookshop</a></li>
+            <li><a href="main-about.html">About Us</a></li>
+            <li><a href="main-orders.html">My Orders</a></li>
+            <li class="more-option" onmouseover="showMoreDropdown()" onclick="toggleMoreDropdown()">
+                <a href="#">More</a>
+                <div id="moreDropdown" class="dropdown-content">
+                    <a href="document-creation.html">Create a Document</a>
+                    <a href="document-editing.html">Edit a Document</a>
+                    <a href="document-printing.html">Print a Document</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="main-index.html">Home</a>
+        <a href="main-computers.html">Sm@rtz Computers</a>
+        <a href="main-bookshop.html">Sm@rtz Bookshop</a>
+        <a href="main-orders.html">My Orders</a>
+        <a href="main-about.html">About Us</a>
+    </div>
+    <main>
+        <h1 class="welcome-message">Welcome to Sm@rtz Bookshop</h1>
+        <p><b>Your one-stop shop for all your book needs.</b></p>
+    
+        <div class="book-gallery">
+            <div class="book">
+                <img src="Images/Book (1).png" alt="Book 1" class="circle-img">
+                <p><b>Deliver What You Promise</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (2).png" alt="Book 2" class="circle-img">
+                <p><b>The Bezos Blueprint</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (3).png" alt="Book 3" class="circle-img">
+                <p><b>Think Faster, Talk Smarter</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (4).png" alt="Book 4" class="circle-img">
+                <p><b>Die Empty</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (5).png" alt="Book 5" class="circle-img">
+                <p><b>The School of Life</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (6).png" alt="Book 6" class="circle-img">
+                <p><b>Built to Sell</b></p>
+            </div>
+            <div class="book">
+                <img src="Images/Book (7).png" alt="Book 7" class="circle-img">
+                <p><b>High Road Leadership</b></p>
+            </div>
+        </div>
+    
+        <section>
+            <h2>Our Collection</h2>
+            <p><b>At Sm@rtz Bookshop, we offer a diverse collection of books for all age groups and interests. Whether you are looking for educational materials, novels, or reference books, we have it all.</b></p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Location: Shop 4, 5, and 6, at the back of the Faculty of CIS, University of Ilorin, Nigeria.</p>
+            <p>Phone Number: +2348156645378</p>
+            <p><a href="https://wa.me/2348156645378" class="whatsapp-link"><img src="Images/whatsapp-logo.png" alt="WhatsApp Logo" class="whatsapp-logo"></a></p>
+            <p>Developed By: <a href="https://techtuneitsolutions.com">TechTune I. T. Solutions</a></p>
+            <div class="search-newsletter">
+                <div class="search-box">
+                    <input type="search" placeholder="Search...">
+                    <button>Search</button>
+                </div>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Sign up for our newsletter">
+                    <button href="signup.html">Subscribe</button>
+                </div>
+            </div>
+            <p>&copy; 2024 Sm@rtz Group. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Customer Service Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <img src="Images/CustomerService.gif" alt="Customer Service" class="chatbot-icon" onclick="toggleChatWindow()">
+        <span class="tooltiptext"><b>Customer Service</b></span>    
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Customer Service</span>
+                <button class="close-chat" onclick="toggleChatWindow()">&times;</button>
+            </div>
+            <div class="chat-body">
+                <!-- Chat content goes here -->
+                <p>Welcome to Sm@rtz Group Customer Service! How can we assist you today?</p>
+                <!-- Add chat functionality here -->
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message..." class="chat-input">
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

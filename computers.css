@@ -1,0 +1,336 @@
+/* Computers Page Specific CSS */
+.welcome-message {
+    font-size: 36px;
+    color: #ff6600;
+    animation: colorChange 3s infinite;
+}
+
+.laptop-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.laptop {
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.laptop:hover {
+    transform: scale(1.1);
+}
+
+.circle-img {
+    width: 150px; /* Adjusted size */
+    height: 150px; /* Adjusted size */
+    border-radius: 50%;
+    border: 2px solid #ff6600; /* Added border for the circle */
+    object-fit: cover;
+}
+
+section {
+    text-align: left;
+    margin-top: 40px;
+}
+
+section h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.service-section {
+    margin-top: 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: transform 0.2s;
+}
+
+.service-section:hover {
+    transform: scale(1.02);
+}
+
+.service-section h3 {
+    color: #ff6600;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.service-section ul {
+    list-style-type: square; /* Different list style for variety */
+    padding-left: 20px; /* Indent list items */
+}
+
+.service-section li {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.explore-button {
+    display: block;
+    margin: 20px auto; /* Centered button */
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center;
+}
+
+.explore-button:hover {
+    background-color: #e65c00;
+}
+
+.hidden-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.hidden-section h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hidden-section ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+.hidden-section ul li {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between service sections */
+}
+
+.service-category {
+    display: block;
+    color: #e65c00
+}
+
+.service-list .service-section {
+    flex: 1 1 200px; /* Flexible layout with minimum width */
+    max-width: 300px; /* Maximum width */
+}
+
+.service-button {
+    display: block;
+    margin: 10px auto; /* Centered button */
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center;
+}
+
+.service-button:hover {
+    background-color: #e65c00;
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+    .laptop-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header, footer {
+        text-align: center;
+    }
+
+    .search-newsletter {
+        flex-direction: column;
+    }
+
+    .search-box, .newsletter-box {
+        margin: 10px 0;
+    }
+
+    .whatsapp-link {
+        margin-top: 10px;
+    }
+}
+
+/* Container for Top Right Section */
+.top-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Space between items */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Search Input and Button */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-input {
+    padding: 8px;
+    border: 1px solid #030202;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Auth Buttons Styling */
+.auth-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.register-btn,
+.signin-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.register-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.register-btn:hover {
+    background-color: #218838;
+}
+
+.signin-btn {
+    background-color: #ffc107;
+    color: white;
+}
+
+.signin-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Cart Section Styling */
+.cart-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-image {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.cart-btn {
+    padding: 8px 12px;
+    background-color: #b85d17;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-btn:hover {
+    background-color: #138496;
+}
+
+/* User Profile Icon Styling */
+.user-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Responsive Alignment for Smaller Screens */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .top-right {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 10px;
+        width: 30%; /* Allow elements to adjust to the full width */
+    }
+
+    .search-container,
+    .auth-section,
+    .cart-section {
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    .search-input {
+        flex: 1; /* Allow the search input to take more space */
+        min-width: 0;
+    }
+
+    .search-btn,
+    .register-btn,
+    .signin-btn,
+    .cart-btn {
+        flex: 0;
+    }
+}
+
+.category-sort-section {
+    margin-bottom: 1px;
+    margin-top: 1px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.category-sort-section label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#category-select {
+    padding: 5px;
+    font-size: 14px;
+}

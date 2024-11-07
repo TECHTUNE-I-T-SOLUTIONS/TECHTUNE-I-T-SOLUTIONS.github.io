@@ -1,0 +1,1373 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url('Images/smartzzz.png') repeat; /* Tiled background */
+    background-size: 150px 150px;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll due to background image */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    opacity: 0.8; /* Adjust the opacity as needed to make the background more/less visible */
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-image: linear-gradient(to right, #edb775, rgb(56, 55, 56));;
+    color: white;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.top-left {
+    flex: 1;
+}
+
+.top-right {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align items to the right */
+}
+
+.center-top {
+    text-align: center;
+    flex: 2;
+    margin-top: 10px;
+}
+
+.center-logo {
+    height: 100px; /* Increased size */
+}
+
+.animated-heading {
+    font-size: 48px; /* Increased size */
+    margin: 5px 0;
+}
+
+.animated-heading a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.nav-icon {
+    cursor: pointer;
+    height: 40px; /* Adjusted size */
+}
+
+.searchbox {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px; /* Space between search box and button */
+}
+
+.bottom-nav {
+    background-color: #ff6600;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-nav ul li {
+    margin: 0 15px;
+}
+
+.bottom-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px; /* Updated width */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Updated initial position */
+    background-color: #ef9322;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #090909;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px); /* Increased bounce height */
+    }
+    60% {
+        transform: translateY(-5px); /* Reduced bounce height */
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: orange; }
+    33% { color: white; }
+    66% { color: black; }
+    100% { color: orange; }
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    background: transparent; /* Ensures transparency */
+}
+
+.welcome-message {
+    font-size: 36px;
+    color: #ff6600;
+    animation: colorChange 3s infinite;
+}
+
+.laptop-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.laptop {
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.laptop:hover {
+    transform: scale(1.1);
+}
+
+.circle-img {
+    width: 150px; /* Adjusted size */
+    height: 150px; /* Adjusted size */
+    border-radius: 50%;
+    border: 2px solid #ff6600; /* Added border for the circle */
+    object-fit: cover;
+}
+
+section {
+    text-align: left;
+    margin-top: 40px;
+}
+
+section h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+section ul {
+    list-style-type: disc;
+    margin: 20px;
+    padding: 0 20px;
+}
+
+section ul li {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.button-view-more {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button-view-more:hover {
+    background-color: #e65c00;
+}
+
+footer {
+    background-image: linear-gradient(to right,#edb775, rgb(56, 55, 56));
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.footer-content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-newsletter {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-box, .newsletter-box {
+    margin: 0 10px;
+}
+
+.search-box input[type="search"], .newsletter-box input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-box button, .newsletter-box button {
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.whatsapp-logo {
+    width: 40px; /* Increased size */
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth transition for animation */
+}
+
+.whatsapp-link:hover .whatsapp-logo {
+    transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+.cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Ensure cart items are aligned to the right */
+    margin-top: 10px;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+}
+
+.cart-icon {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.cart-button {
+    padding: 5px 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.cart-icon:hover,
+.cart-button:hover {
+    transform: scale(1.1);
+}
+
+.empty-cart-img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Chatbot Styles */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chatbot-container:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltiptext {
+    visibility: visible;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.239);
+    color: #000000;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Adjust as needed */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+.chatbot-icon {
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1);
+}
+
+.chat-window {
+    display: none;
+    position: fixed;
+    bottom: 20px; /* Adjusted to fit with the bottom of the screen */
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(132, 79, 79);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1001;
+    border: 2px solid #ff6600; /* Border color to ensure visibility */
+}
+
+.chat-header {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e65c00; /* Border for header for distinction */
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-body {
+    padding: 10px;
+    overflow-y: auto;
+    height: calc(100% - 90px); /* Adjust height to account for header and footer */
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 2px solid #ddd;
+    background-color: #f9f9f9; /* Light background to distinguish from chat body */
+    position: absolute;
+    bottom: 0; /* Stick to the bottom of the chat window */
+    width: 100%; /* Full width of chat window */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px; /* Space between input and button */
+}
+
+.send-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.send-button:hover {
+    background-color: #e65c00;
+}
+
+/* Explore Services Button */
+.explore-services-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.explore-services-button:hover {
+    background-color: #e65c00;
+}
+
+/* Computer Services Section */
+.computer-services-section {
+    margin-top: 40px;
+}
+
+.computer-services-section h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.computer-services-section .service {
+    margin: 10px 0;
+}
+
+.computer-services-section .service-button {
+    padding: 10px 15px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.computer-services-section .service-button:hover {
+    background-color: #e65c00;
+}
+
+.hidden-services {
+    display: none; /* Hide the extended services section by default */
+}
+
+.service-category {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ddd; /* Optional: border for visual distinction */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 20px;
+}
+
+.service-category h3 {
+    margin-top: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    position: absolute;
+    bottom: 20px; /* Adjust to place button at the midline vertically */
+    width: 100%;
+}
+
+.service-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.service-button:hover {
+    background-color: #e65c00;
+}
+
+/* Bookshop Page Specific CSS */
+.book-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.book {
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.book:hover {
+    transform: scale(1.1);
+}
+
+.book img {
+    width: 150px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+}
+/* Center contents of the main section on the About Us page */
+body.about-us-page main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+body.about-us-page section {
+    max-width: 800px; /* Optional: control the maximum width of sections */
+    margin: 20px;
+}
+
+.Document-Creation {
+    background-color: #e65c00;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ddd; /* Optional: border for visual distinction */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 20px;
+  
+}
+.Description {
+    background-color: #e65c00;
+    display: flex;
+    color: #0a0523;
+    flex-direction: column;
+    align-items: left;
+    position: relative;
+    padding: 20px;
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
+  
+}
+
+.Phone {
+    background-color: #e65c00;
+    color: #0a0523;
+    margin-top: 10px;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 20px;
+  
+}
+
+.E-mail {
+    background-color: #e65c00;
+    color: #0a0523;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 20px;
+  
+}
+
+.Submit .submit-button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    color: #0a0523; 
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button {
+    padding: 10px 15px;
+    background-color: #ff6600;
+    color: white;
+    border: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    margin-left: 200px;
+    margin-right: 200px;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center; /* Align button to the right */
+
+}
+
+.upload {
+    background-color: #efa370;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ddd; /* Optional: border for visual distinction */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 20px;
+   
+}
+
+.Document-Type {
+    background-color: #e65c00;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-image: linear-gradient(to right,#edb775, rgb(56, 55, 56));
+    color: white;
+}
+
+.top-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+.top-right {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.searchbox {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
+
+.profile-icon {
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.center-top {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.center-logo {
+    width: 100px;
+}
+
+.animated-heading {
+    margin: 0;
+    font-size: 2em;
+}
+
+.animated-heading a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.newsletter-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-image:linear-gradient(to right,#6d70c6, rgb(14, 14, 14));
+    border: 1px solid #080101;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    max-width: 300px;
+    text-align: center;
+
+}
+
+.newsletter-notification p {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #f8f5f2;
+}
+
+.newsletter-notification .close-button,
+.newsletter-notification .signup-button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.newsletter-notification .close-button {
+    background-color: #e00f0f;
+    color: white;
+}
+
+.newsletter-notification .signup-button {
+    background-color: orange;
+    color: white;
+}
+
+.signup-form, .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.signup-form label, .login-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.signup-form input, .signup-form select, 
+.login-form input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-button, .login-button {
+    padding: 10px 15px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-button:hover, .login-button:hover {
+    background-color: darkorange;
+}
+
+.login-link, .signup-link {
+    color: rgb(228, 5, 5);
+    text-decoration: none;
+}
+
+.login-link:hover, .signup-link:hover {
+    text-decoration: underline;
+}
+
+.button-view-more {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button-view-more:hover {
+    background-color: darkorange;
+}
+
+
+
+/* Container for Top Right Section */
+.top-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Space between items */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Search Input and Button */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-input {
+    padding: 8px;
+    border: 1px solid #030202;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Auth Buttons Styling */
+.auth-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.register-btn,
+.signin-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.register-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.register-btn:hover {
+    background-color: #218838;
+}
+
+.signin-btn {
+    background-color: #ffc107;
+    color: white;
+}
+
+.signin-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Cart Section Styling */
+.cart-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-image {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.cart-btn {
+    padding: 8px 12px;
+    background-color: #b85d17;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-btn:hover {
+    background-color: #138496;
+}
+
+/* User Profile Icon Styling */
+.user-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Responsive Alignment for Smaller Screens */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .top-right {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 10px;
+        width: 30%; /* Allow elements to adjust to the full width */
+    }
+
+    .search-container,
+    .auth-section,
+    .cart-section {
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    .search-input {
+        flex: 1; /* Allow the search input to take more space */
+        min-width: 0;
+    }
+
+    .search-btn,
+    .register-btn,
+    .signin-btn,
+    .cart-btn {
+        flex: 0;
+    }
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #333;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+.falling-book, .animated-computer {
+    position: absolute;
+    top: -50px;
+    font-size: 2em;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    background-color: #FFFAF0; /* Light orange-tan background */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.profile-section h2 {
+    color: #8B4513; /* Dark brown */
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.profile-section img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #FF8C00; /* Orange border */
+    margin-bottom: 20px;
+}
+
+/* Profile Details */
+.profile-details {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 10px;
+    align-items: left;
+}
+
+.profile-details label {
+    color: #333333; /* Dark brown text */
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.profile-details input[type="text"],
+.profile-details input[type="password"],
+.profile-details input[type="email"],
+.profile-details input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8B4513; /* Dark brown border */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.profile-details button {
+    background-color: #FF8C00; /* Orange */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.profile-details button:hover {
+    background-color: #8B4513; /* Dark brown on hover */
+}
+
+/* OTP and Captcha */
+.otp-section, .captcha-section {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.captcha-box {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.captcha-image {
+    width: 100px;
+    height: 50px;
+    background-color: #262524; /* Orange */
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-family: monospace;
+    font-size: 1.5em;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    user-select: none;
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.refresh-button {
+    align-items: left;
+    color: white;
+
+}
+
+.techtune-link {
+    color: white
+}
+/* Styling for the dropdown */
+.more-option {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e2740c; /* Dropdown background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333; /* Adjust color to match the theme */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #e76316; /* Highlight option on hover */
+}
+
+.more-option:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Updated Splash Screen Styles */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.splash-content {
+    background-image: linear-gradient(to right, #edb775, rgb(56, 55, 56));
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* Same width as login splash screen */
+    max-height: 80%; /* Ensure a fixed height */
+    overflow-y: auto; /* Add a vertical scrollbar inside the splash screen */
+    text-align: left;
+    position: relative;
+}
+
+.splash-content label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.splash-content input,
+.splash-content select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.whatsapp-container {
+    display: flex;
+    gap: 5px;
+}
+
+button.login-button,
+button.recovery-button {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button.signup-button:hover,
+button.login-button:hover,
+button.recovery-button:hover {
+    background-color: #ff9900;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: rgb(29, 25, 25);
+}
+
+h1, 
+.splash-content a {
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+}
+/* Styles for Google and Facebook buttons */
+.login-button {
+    background-color: #db4437; /* Google Red */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.login-button:hover {
+    background-color: #c23321; /* Darker Google Red */
+}
+
+
+#facebook-login {
+    background-color: #3b5998; /* Facebook Blue */
+}
+
+#facebook-login:hover {
+    background-color: #b6c5e6; /* Darker Facebook Blue */
+}
+
+#google-login {
+    background-color: #ff3e30; /* google Red */
+}
+
+#google-login:hover {
+    background-color: #f7b529; /* Google Yellow */
+}
+
+/* Styles for Google and Facebook Icons */
+.icon {
+    width: 20px; /* Adjust icon size as needed */
+    height: 20px;
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle;
+}
+
+#google-login,
+#facebook-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Space between icon and text */
+}
+
+.newsletter-email {
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-buttons .close-button:hover {
+    background-color: red;
+}
+
+.newsletter-buttons .signup-button:hover {
+    background-color: #ff9900;
+}
+
+.newsletter-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.logout-btn {
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.count-container {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.dynamic-number {
+    color: #FF5733; /* Adjust color as per your theme */
+    font-weight: bold;
+}

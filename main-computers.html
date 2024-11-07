@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sm@rtz Computers</title>
+    <link rel="icon" href="Images/smartzzz.png" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" href="styles.css"> <!-- General styles -->
+    <link rel="stylesheet" href="computers.css"> <!-- Computers page specific styles -->
+    <script src="scripts.js" defer></script> <!-- JavaScript file -->
+</head>
+<body>
+    <body>
+        <header>
+            <div class="topbar">
+                <div class="top-left">
+                    <img src="Images/Navigation Icon.png" alt="Navigation Icon" class="nav-icon" onclick="toggleSidebar()">
+                </div>
+                <div class="top-right">
+                    <!-- Search Section -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <button class="search-btn">Search</button>
+                    </div>
+        
+                    <!-- Cart Section -->
+                    <div class="cart-section">
+                        <img src="Images/Empty-Cart.png" alt="Cart Icon" class="cart-image">
+                        <button class="cart-btn" onclick="location.href='main-orders.html'">Cart</button>
+                    </div>
+        
+                    <!-- Profile Icon -->
+                    <img src="Images/User-Profile.png" alt="User Profile" class="user-icon" onclick="location.href='main-profile.html'">
+        
+                    <!-- Logout Button -->
+                    <button class="logout-btn" onclick="confirmLogout()">Logout</button>
+                </div>
+            </div>
+        
+            <!-- Center Top Section -->
+            <div class="center-top">
+                <img src="Images/Sm@rtzGroupLogo.png" alt="Sm@rtz Group Logo" class="center-logo">
+                <h1 class="animated-heading bounce"><a href="main-index.html">SM@RTZ GROUP</a></h1>
+            </div>
+        </header>
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="main-index.html">Home</a></li>
+                <li><a href="main-computers.html">Sm@rtz Computers</a></li>
+                <li><a href="main-bookshop.html">Sm@rtz Bookshop</a></li>
+                <li><a href="main-about.html">About Us</a></li>
+                <li><a href="main-orders.html">My Orders</a></li>
+                <li class="more-option" onmouseover="showMoreDropdown()" onclick="toggleMoreDropdown()">
+                    <a href="#">More</a>
+                    <div id="moreDropdown" class="dropdown-content">
+                        <a href="document-creation.html">Create a Document</a>
+                        <a href="document-editing.html">Edit a Document</a>
+                        <a href="document-printing.html">Print a Document</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="sidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+            <a href="main-index.html">Home</a>
+            <a href="main-computers.html">Sm@rtz Computers</a>
+            <a href="main-bookshop.html">Sm@rtz Bookshop</a>
+            <a href="main-orders.html">My Orders</a>
+            <a href="main-about.html">About Us</a>
+        </div>
+        <main>
+            <!-- Category and Sorting Options -->
+            <!-- Computers, Accessories, Other Gadgets-->
+            <section class="category-sort-section">
+                <label for="category-select">Sort by Product Category:</label>
+                <select id="category-select" onchange="filterProducts()">
+                    <option value="all">All</option>
+                    <option value="computers">Computers</option>
+                    <option value="accessories">Computer Accessories</option>
+                    <option value="other-gadgets">Other Gadgets</option>
+                </select>
+
+                <label for="category-select">Sort by Sub-Category:</label>
+                <select id="category-select" onchange="filterProducts()">
+                    <option value="all">All</option>
+                    <option value="desktop">Desktop</option>
+                    <option value="laptops">Laptop PCs</option>
+                    <option value="monitors">Monitors</option>
+                    <option value="accessories">Computer Accessories</option>
+                    <option value="other-gadgets">Other Gadgets</option>
+                </select>
+
+                <label for="category-select">Other Gadgets:</label>
+                <select id="category-select" onchange="filterProducts()">
+                    <option value="all">All</option>
+                    <option value="phone-chargers">Phone Chargers</option>
+                    <option value="laptop-chargers">Laptop Chargers</option>
+                    <option value="headsets-and-earphones">Headsets and Earphones</option>
+                    <option value="calculators">Calculators</option>
+                    <option value="other-educational-accessories">Other Educational Gadgets</option>
+                </select>
+
+
+            </section>
+        
+            <h1 class="welcome-message">Welcome to Sm@rtz Computers</h1>
+            <p>Your one-stop shop for all your computer accessory needs.</p>
+        
+            <div id="product-gallery" class="laptop-gallery">
+                <div class="laptop" data-category="desktop">
+                    <img src="Images/Dell-Laptop 1.png" alt="Dell Laptop 1" class="circle-img">
+                    <p>Dell</p>
+                </div>
+                <div class="laptop" data-category="desktop">
+                    <img src="Images/Dell-Laptop 2.png" alt="Dell Laptop 2" class="circle-img">
+                    <p>Dell</p>
+                </div>
+                <div class="laptop" data-category="desktop">
+                    <img src="Images/Dell-Laptop 3.png" alt="Dell Laptop 3" class="circle-img">
+                    <p>Dell</p>
+                </div>
+                <div class="laptop" data-category="pc">
+                    <img src="Images/Hp-Laptop 1.png" alt="Hp Laptop 1" class="circle-img">
+                    <p>Hp</p>
+                </div>
+                <div class="laptop" data-category="pc">
+                    <img src="Images/Hp-Laptop 2.png" alt="Hp Laptop 2" class="circle-img">
+                    <p>Hp</p>
+                </div>
+                <div class="laptop" data-category="accessories">
+                    <img src="Images/Hp-Laptop 3.png" alt="Hp Laptop 3" class="circle-img">
+                    <p>Hp</p>
+                </div>
+                <div class="laptop" data-category="monitors">
+                    <img src="Images/Lenovo-Laptop 1.png" alt="Lenovo Laptop 1" class="circle-img">
+                    <p>Lenovo</p>
+                </div>
+                <div class="laptop" data-category="monitors">
+                    <img src="Images/Lenovo-Laptop 2.png" alt="Lenovo Laptop 2" class="circle-img">
+                    <p>Lenovo</p>
+                </div>
+                <div class="laptop" data-category="boxes">
+                    <img src="Images/Lenovo-Laptop 3.png" alt="Lenovo Laptop 3" class="circle-img">
+                    <p>Lenovo</p>
+                </div>
+                <div class="laptop" data-category="boxes">
+                    <img src="Images/Lenovo-Laptop 4.png" alt="Lenovo Laptop 4" class="circle-img">
+                    <p>Lenovo</p>
+                </div>
+                <div class="laptop" data-category="boxes">
+                    <img src="Images/Lenovo-Laptop 5.png" alt="Lenovo Laptop 5" class="circle-img">
+                    <p>Lenovo</p>
+                </div>
+            </div>
+        </main>
+            
+    <footer>
+        <div class="footer-content">
+            <p>Location: Shop 4, 5, and 6, at the back of the Faculty of CIS, University of Ilorin, Nigeria.</p>
+            <p>Phone Number: +2348156645378</p>
+            <p><a href="https://wa.me/2348156645378" class="whatsapp-link"><img src="Images/whatsapp-logo.png" alt="WhatsApp Logo" class="whatsapp-logo"></a></p>
+            <p>Developed By: <a href="https://techtuneitsolutions.com">TechTune I. T. Solutions</a></p>
+            <div class="search-newsletter">
+                <div class="search-box">
+                    <input type="search" placeholder="Search...">
+                    <button>Search</button>
+                </div>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Sign up for our newsletter">
+                    <button href="signup.html">Subscribe</button>
+                </div>
+            </div>
+            <p>&copy; 2024 Sm@rtz Group. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Customer Service Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <img src="Images/CustomerService.gif" alt="Customer Service" class="chatbot-icon" onclick="toggleChatWindow()">
+        <span class="tooltiptext"><b>Customer Service</b></span>    
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Customer Service</span>
+                <button class="close-chat" onclick="toggleChatWindow()">&times;</button>
+            </div>
+            <div class="chat-body">
+                <!-- Chat content goes here -->
+                <p>Welcome to Sm@rtz Group Customer Service! How can we assist you today?</p>
+                <!-- Add chat functionality here -->
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message..." class="chat-input">
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

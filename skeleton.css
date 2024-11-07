@@ -1,0 +1,109 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrollbars due to falling objects */
+}
+
+.skeleton-wrapper {
+    width: 90%;
+    max-width: 1200px;
+}
+
+.skeleton-header, .skeleton-content, .skeleton-gallery, .skeleton-footer {
+    margin-bottom: 20px;
+}
+
+.skeleton-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skeleton-logo, .skeleton-nav, .skeleton-title, .skeleton-paragraph, .skeleton-image, .skeleton-footer {
+    background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+    background-size: 400% 400%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    border-radius: 5px;
+}
+
+.skeleton-logo {
+    width: 150px;
+    height: 50px;
+}
+
+.skeleton-nav {
+    width: 70%;
+    height: 20px;
+}
+
+.skeleton-title {
+    width: 60%;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+.skeleton-paragraph {
+    width: 100%;
+    height: 15px;
+    margin-bottom: 10px;
+}
+
+.skeleton-image {
+    width: 30%;
+    height: 150px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.skeleton-footer {
+    width: 100%;
+    height: 30px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: -135% 0%;
+    }
+}
+
+#falling-books .falling-book, #animated-computers .animated-computer {
+    position: absolute;
+    top: -50px;
+    font-size: 2em;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Creation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="Images/Sm@rtzGroupLogo.png" alt="Sm@rtz Group Logo" class="header-logo">
+        <h1 class="animated-heading bounce"><a href="index.html">SM@RTZ GROUP</a></h1>
+    </header>
+    <main>
+    <div class="Document-Creation">
+        <h1>Document Creation</h1>
+        <form action="#" method="post" class="document-form">
+            <div class="Description">
+                <b><label for="document-description">Describe the document you want to create:</label></b>
+                <textarea placeholder="Describe your document here..." font-size="16" document-description name="document-description" rows="4" required></textarea>
+                
+                <div class="Phone">
+                    <label for="contact-phone">Phone Number:</label>
+                    <input placeholder="e.g. +2340123456789" type="tel" id="contact-phone" name="contact-phone" required>
+                </div>
+
+                <div class="E-mail">
+                    <label for="contact-email">Email Address:</label>
+                    <input placeholder="e.g. abcde@example.com" type="email" id="contact-email" name="contact-email" required>
+                </div>
+                <div class="Notice">
+                    <p class="notice"><b>Note: You will be contacted by a Business Representative within minutes.</b></p>
+                </div>
+
+                <div class="Submit">
+                    <button type="submit" class="submit-button"><b>Submit</b></button>
+                </div>
+            </div>
+        </form>
+        <a href="javascript:history.back()" class="back-button">Go Back</a>
+    </div>
+    </main>
+</body>
+<footer>
+    <div class="footer-content">
+        <p>Location: Shop 4, 5, and 6, at the back of the Faculty of CIS, University of Ilorin, Nigeria.</p>
+        <p>Phone Number: +2348156645378</p>
+        <p><a href="https://wa.me/2348156645378" class="whatsapp-link"><img src="Images/whatsapp-logo.png" alt="WhatsApp Logo" class="whatsapp-logo"></a></p>
+        <p>Developed By: <a href="https://techtuneitsolutions.com">TechTune I. T. Solutions</a></p>
+        <div class="search-newsletter">
+            <div class="search-box">
+                <input type="search" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <div class="newsletter-box">
+                <input type="email" placeholder="Sign up for our newsletter">
+                <button href="signup.html">Subscribe</button>
+            </div>
+        </div>
+        <p>&copy; 2024 Sm@rtz Group. All rights reserved.</p>
+    </div>
+</footer>
+<!-- Customer Service Chatbot -->
+<div class="chatbot-container" id="chatbotContainer">
+    <img src="Images/CustomerService.gif" alt="Customer Service" class="chatbot-icon" onclick="toggleChatWindow()">
+    <span class="tooltiptext"><b>Customer Service</b></span>    
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <span>Customer Service</span>
+            <button class="close-chat" onclick="toggleChatWindow()">&times;</button>
+        </div>
+        <div class="chat-body">
+            <!-- Chat content goes here -->
+            <p>Welcome to Sm@rtz Group Customer Service! How can we assist you today?</p>
+            <!-- Add chat functionality here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type your message..." class="chat-input">
+            <button class="send-button">Send</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
